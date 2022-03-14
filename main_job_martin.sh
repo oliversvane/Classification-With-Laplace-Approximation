@@ -5,11 +5,11 @@
 #BSUB -gpu "num=1:mode=exclusive_process"
 #BSUB -W 24:00
 #BSUB -R "rusage[mem=40GB]"
-#BSUB -u oliversvaneolsen@gmail.com
+#BSUB -u Martin@illum.info
 #BSUB -B
 #BSUB -N
-#BSUB -o log.out
-#BSUB -e log.err
+#BSUB -o log.out_martin
+#BSUB -e log.err_martin
 
 
 # Load the cuda module
