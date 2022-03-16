@@ -18,15 +18,15 @@ warnings.simplefilter("ignore", UserWarning)
 writer = SummaryWriter('runs/fashion_mnist_experiment_1')
 
 
-np.random.seed(7777)
-torch.manual_seed(7777)
+#np.random.seed(7777)
+#torch.manual_seed(7777)
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = True
 
 
 n_epochs = 1
 batch_size_train = 64
-batch_size_test = 1000
+batch_size_test = 1
 learning_rate = 0.01
 momentum = 0.5
 log_interval = 10
@@ -58,21 +58,27 @@ class CNN(nn.Module):
         self.conv1 = nn.Conv2d(1, 32, 3, 1)
         self.conv2 = nn.Conv2d(32, 64, 3, 1)
         self.conv3 = nn.Conv2d(64, 32, 5, 1)
-        self.fc1 = nn.Linear(12800, 10)
+        self.fc1 = nn.Linear(800, 10)
+        self.relu = nn.ReLU()
+        self.maxpool = nn.MaxPool2d(4, 4)
 
     #Definer struktur af netværk
     def forward(self,x):
         out = nn.Sequential(
           self.conv1,
-          nn.ReLU(), #TODO Maxpooling
+          self.relu,
           self.conv2,
-          nn.ReLU(), #TODO Maxpooling
+          self.relu,
           self.conv3,
-          nn.Flatten(), #TODO GLOBAL Averagepooling
+          self.relu,
+          self.maxpool,
+          nn.Flatten(),
+          nn.Flatten(),
           self.fc1)(x)
         return out
 
 model = CNN()
+
 
 
 #Tensorboard
@@ -118,6 +124,7 @@ def train(epoch):
 
 
 def test():
+  print("Begin pred print")
   model.eval()
   test_loss = 0
   correct = 0
@@ -126,6 +133,7 @@ def test():
       output = model(data)
       test_loss += F.nll_loss(output, target, size_average=False).item()
       pred = output.data.max(1, keepdim=True)[1]
+      print(output)
       correct += pred.eq(target.data.view_as(pred)).sum()
   test_loss /= len(test_loader.dataset)
   test_losses.append(test_loss)
@@ -187,7 +195,6 @@ def test2(calibration_method=None, **kwargs):
   with torch.no_grad():
       for data in test_loader:
           images, labels = data[0], data[1]
-          print("1")
           pred = model(images)
           
           if calibration_method:
@@ -209,11 +216,12 @@ def test2(calibration_method=None, **kwargs):
 
           # Count correctly classified samples for accuracy
           correct += sum(predicted_cl == labels).item()
+      
   print("We did it")
   preds = np.array(preds).flatten()
   labels_oneh = np.array(labels_oneh).flatten()
 
-  correct_perc = correct / len(test_loader)
+  correct_perc = correct / len(test_loader.dataset)
   print('Accuracy of the network on the test images: %d %%' % (100 * correct_perc))
   print(correct_perc)
   
@@ -288,13 +296,13 @@ def _eval():
 optimizer.step(_eval)
 
 print('Final T_scaling factor: {:.2f}'.format(temperature.item()))
-"""
+
 plt.subplot(121)
 plt.plot(list(range(len(temps))), temps)
 
 plt.subplot(122)
 plt.plot(list(range(len(losses))), losses)
-plt.show()"""
+plt.savefig("test.png")
 
 
 

@@ -1,0 +1,410 @@
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 20:47:28.424610: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 20:54:43.762645: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 85, in <module>
+    writer.add_graph(model, images)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/writer.py", line 736, in add_graph
+    self._get_file_writer().add_graph(graph(model, input_to_model, verbose, use_strict_trace))
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 295, in graph
+    raise e
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 289, in graph
+    trace = torch.jit.trace(model, args, strict=use_strict_trace)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 741, in trace
+    return trace_module(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 958, in trace_module
+    module._c._create_method_from_trace(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "main.py", line 65, in forward
+    out = nn.Sequential(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 442, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Calculated padded input size per channel: (4 x 4). Kernel size: (5 x 5). Kernel size can't be greater than actual input size
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 21:08:01.986898: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 120, in <module>
+    writer.add_graph(model, images)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/writer.py", line 736, in add_graph
+    self._get_file_writer().add_graph(graph(model, input_to_model, verbose, use_strict_trace))
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 295, in graph
+    raise e
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 289, in graph
+    trace = torch.jit.trace(model, args, strict=use_strict_trace)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 741, in trace
+    return trace_module(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 958, in trace_module
+    module._c._create_method_from_trace(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "main.py", line 95, in forward
+    out = F.relu(self.conv2(out))
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 442, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Given groups=1, weight of size [64, 32, 3, 3], expected input[64, 1, 28, 28] to have 32 channels, but got 1 channels instead
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 21:11:56.950575: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 120, in <module>
+    writer.add_graph(model, images)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/writer.py", line 736, in add_graph
+    self._get_file_writer().add_graph(graph(model, input_to_model, verbose, use_strict_trace))
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 295, in graph
+    raise e
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 289, in graph
+    trace = torch.jit.trace(model, args, strict=use_strict_trace)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 741, in trace
+    return trace_module(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 958, in trace_module
+    module._c._create_method_from_trace(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "main.py", line 95, in forward
+    out = F.relu(self.conv2(out))
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 442, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Given groups=1, weight of size [64, 32, 3, 3], expected input[64, 1, 28, 28] to have 32 channels, but got 1 channels instead
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 21:17:30.497662: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 120, in <module>
+    writer.add_graph(model, images)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/writer.py", line 736, in add_graph
+    self._get_file_writer().add_graph(graph(model, input_to_model, verbose, use_strict_trace))
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 295, in graph
+    raise e
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 289, in graph
+    trace = torch.jit.trace(model, args, strict=use_strict_trace)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 741, in trace
+    return trace_module(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 958, in trace_module
+    module._c._create_method_from_trace(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "main.py", line 105, in forward
+    out = self.fc1(out)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 103, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/functional.py", line 1848, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (64x3200 and 12800x10)
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 21:23:14.697216: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 120, in <module>
+    writer.add_graph(model, images)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/writer.py", line 736, in add_graph
+    self._get_file_writer().add_graph(graph(model, input_to_model, verbose, use_strict_trace))
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 295, in graph
+    raise e
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 289, in graph
+    trace = torch.jit.trace(model, args, strict=use_strict_trace)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 741, in trace
+    return trace_module(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 958, in trace_module
+    module._c._create_method_from_trace(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "main.py", line 105, in forward
+    out = self.fc1(out)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 103, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/functional.py", line 1848, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (64x800 and 12800x10)
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 21:25:56.150642: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 121, in <module>
+    writer.add_graph(model, images)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/writer.py", line 736, in add_graph
+    self._get_file_writer().add_graph(graph(model, input_to_model, verbose, use_strict_trace))
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 295, in graph
+    raise e
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 289, in graph
+    trace = torch.jit.trace(model, args, strict=use_strict_trace)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 741, in trace
+    return trace_module(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 958, in trace_module
+    module._c._create_method_from_trace(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "main.py", line 105, in forward
+    out = self.fc1(out)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 103, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/functional.py", line 1848, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (64x800 and 5120x10)
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 21:31:58.082200: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 121, in <module>
+    writer.add_graph(model, images)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/writer.py", line 736, in add_graph
+    self._get_file_writer().add_graph(graph(model, input_to_model, verbose, use_strict_trace))
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 295, in graph
+    raise e
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/utils/tensorboard/_pytorch_graph.py", line 289, in graph
+    trace = torch.jit.trace(model, args, strict=use_strict_trace)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 741, in trace
+    return trace_module(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/jit/_trace.py", line 958, in trace_module
+    module._c._create_method_from_trace(
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "main.py", line 105, in forward
+    out = self.fc1(out)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 103, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/zhome/c8/2/138418/.local/lib/python3.8/site-packages/torch/nn/functional.py", line 1848, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (64x800 and 51200x10)
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 21:42:37.245776: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 344, in <module>
+    draw_reliability_graph(preds_original,"soft_")
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 37, in draw_reliability_graph
+    ECE, MCE = get_metrics(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 27, in get_metrics
+    bins, _, bin_accs, bin_confs, bin_sizes = calc_bins(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 19, in calc_bins
+    bin_accs[bin] = (labels_oneh[binned==bin]).sum() / bin_sizes[bin]
+NameError: name 'labels_oneh' is not defined
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 21:58:45.351953: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 311, in <module>
+    draw_reliability_graph(preds_original,"soft_")
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 37, in draw_reliability_graph
+    ECE, MCE = get_metrics(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 27, in get_metrics
+    bins, _, bin_accs, bin_confs, bin_sizes = calc_bins(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 19, in calc_bins
+    bin_accs[bin] = (labels_oneh[binned==bin]).sum() / bin_sizes[bin]
+NameError: name 'labels_oneh' is not defined
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 22:11:14.545318: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 310, in <module>
+    draw_reliability_graph(preds_original,"soft_")
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 37, in draw_reliability_graph
+    ECE, MCE = get_metrics(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 27, in get_metrics
+    bins, _, bin_accs, bin_confs, bin_sizes = calc_bins(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 19, in calc_bins
+    bin_accs[bin] = (labels_oneh[binned==bin]).sum() / bin_sizes[bin]
+NameError: name 'labels_oneh' is not defined
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 22:27:11.133517: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 310, in <module>
+    draw_reliability_graph(preds_original,"soft_")
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 37, in draw_reliability_graph
+    ECE, MCE = get_metrics(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 27, in get_metrics
+    bins, _, bin_accs, bin_confs, bin_sizes = calc_bins(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 19, in calc_bins
+    bin_accs[bin] = (labels_oneh[binned==bin]).sum() / bin_sizes[bin]
+NameError: name 'labels_oneh' is not defined
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 22:47:13.137319: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 310, in <module>
+    draw_reliability_graph(preds_original,"soft_")
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 37, in draw_reliability_graph
+    ECE, MCE = get_metrics(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 27, in get_metrics
+    bins, _, bin_accs, bin_confs, bin_sizes = calc_bins(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 19, in calc_bins
+    bin_accs[bin] = (labels_oneh[binned==bin]).sum() / bin_sizes[bin]
+NameError: name 'labels_oneh' is not defined
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 23:08:53.551115: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 312, in <module>
+    draw_reliability_graph(preds_original,"soft_")
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 37, in draw_reliability_graph
+    ECE, MCE = get_metrics(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 27, in get_metrics
+    bins, _, bin_accs, bin_confs, bin_sizes = calc_bins(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 19, in calc_bins
+    bin_accs[bin] = (labels_oneh[binned==bin]).sum() / bin_sizes[bin]
+NameError: name 'labels_oneh' is not defined
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 23:22:47.703453: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 312, in <module>
+    draw_reliability_graph(preds_original,"soft_")
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 37, in draw_reliability_graph
+    ECE, MCE = get_metrics(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 27, in get_metrics
+    bins, _, bin_accs, bin_confs, bin_sizes = calc_bins(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 19, in calc_bins
+    bin_accs[bin] = (labels_oneh[binned==bin]).sum() / bin_sizes[bin]
+NameError: name 'labels_oneh' is not defined
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+2022-03-16 23:35:48.692126: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "main.py", line 312, in <module>
+    draw_reliability_graph(preds_original,"soft_")
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 37, in draw_reliability_graph
+    ECE, MCE = get_metrics(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 27, in get_metrics
+    bins, _, bin_accs, bin_confs, bin_sizes = calc_bins(preds)
+  File "/zhome/c8/2/138418/Deep_Learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 19, in calc_bins
+    bin_accs[bin] = (labels_oneh[binned==bin]).sum() / bin_sizes[bin]
+NameError: name 'labels_oneh' is not defined
