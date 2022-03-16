@@ -1,1 +1,0 @@
-etellerandet.py
