@@ -1,0 +1,23 @@
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+Traceback (most recent call last):
+  File "main.py", line 168, in <module>
+    probs_laplace = predict(test_loader, la, laplace=True)
+  File "/zhome/f5/b/137886/.local/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 28, in decorate_context
+    return func(*args, **kwargs)
+  File "main.py", line 146, in predict
+    py.append(model(x))
+  File "/zhome/f5/b/137886/.local/lib/python3.8/site-packages/laplace/baselaplace.py", line 530, in __call__
+    f_mu, f_var = self._glm_predictive_distribution(x)
+  File "/zhome/f5/b/137886/.local/lib/python3.8/site-packages/laplace/lllaplace.py", line 119, in _glm_predictive_distribution
+    f_var = self.functional_variance(Js)
+  File "/zhome/f5/b/137886/.local/lib/python3.8/site-packages/laplace/baselaplace.py", line 1006, in functional_variance
+    return torch.einsum('ncp,p,nkp->nck', Js, self.posterior_variance, Js)
+  File "/zhome/f5/b/137886/.local/lib/python3.8/site-packages/torch/functional.py", line 327, in einsum
+    return _VF.einsum(equation, operands)  # type: ignore[attr-defined]
+KeyboardInterrupt
