@@ -21,3 +21,20 @@ Traceback (most recent call last):
   File "/zhome/f5/b/137886/.local/lib/python3.8/site-packages/torch/functional.py", line 327, in einsum
     return _VF.einsum(equation, operands)  # type: ignore[attr-defined]
 KeyboardInterrupt
+Loaded dependency [python3/3.8.11]: gcc/10.3.0-binutils-2.36.1
+Loaded module: python3/3.8.11
+
+Loading python3/3.8.11
+  Loading requirement: gcc/10.3.0-binutils-2.36.1
+Loaded module: cuda/11.3
+Loaded module: cudnn/v8.2.0.53-prod-cuda-11.3
+Traceback (most recent call last):
+  File "main.py", line 304, in <module>
+    draw_reliability_graph(preds_original,"soft_")
+  File "/zhome/f5/b/137886/Avanced_machine_learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 37, in draw_reliability_graph
+    ECE, MCE = get_metrics(preds)
+  File "/zhome/f5/b/137886/Avanced_machine_learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 27, in get_metrics
+    bins, _, bin_accs, bin_confs, bin_sizes = calc_bins(preds)
+  File "/zhome/f5/b/137886/Avanced_machine_learning/Classification-With-Laplace-Approximation/visualization/plot.py", line 19, in calc_bins
+    bin_accs[bin] = (labels_oneh[binned==bin]).sum() / bin_sizes[bin]
+NameError: name 'labels_oneh' is not defined
