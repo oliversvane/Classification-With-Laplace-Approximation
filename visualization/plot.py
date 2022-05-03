@@ -72,3 +72,43 @@ def draw_reliability_graph(preds,name):
   plt.savefig(name+'calibrated_network.png', bbox_inches='tight')
 
 #draw_reliability_graph(preds)
+
+
+def cor_var(y):
+    variances=[]
+    coordinates=[]
+    for i in range(len(y)):
+        variances.append((np.var([x[0] for x in y[i]]),(np.var([x[1] for x in y[i]]))))
+        coordinates.append([np.mean([x[0] for x in y[i]]),(np.mean([x[1] for x in y[i]]))])
+    return coordinates,variances
+
+def Ellipse_plot(cor,var,cls):
+    fig = plt.figure(0)
+    ax = fig.add_subplot(111, aspect='equal')
+    ax.axis('equal')
+    ax.set(xlim=[0, 5], ylim=[0, 5])
+    for i in range(len(cor)):
+        if cls[i] == True:
+            b="b"
+            ell = Ellipse(xy=cor[i], width=var[i][0], height=var[i][1], angle=0,
+                        edgecolor=b, lw=2, facecolor='none')
+            ax.scatter(cor[i][0], cor[i][1],s=3, c=b)
+            ax.add_artist(ell)
+        else:
+            ell = Ellipse(xy=cor[i], width=var[i][0], height=var[i][1], angle=0,
+            edgecolor="r", lw=2, facecolor='none')
+            ax.scatter(cor[i][0], cor[i][1],s=3, c="r") 
+            ax.add_artist(ell)
+        my_labels = {"x1" : "_nolegend_", "x2" : "_nolegend_"}   
+
+    #ax.legend()
+
+    plt.show()
+
+import pandas as pd
+def dist_plot(var):
+    dist_data_x1 = [x[0] for x in var]
+    dist_data_x2 = [x[1] for x in var]
+    df = pd.DataFrame(list(zip(dist_data_x1, dist_data_x2,cls)),
+                columns =['x', 'y','dist'])
+    sns.displot(df, x="x", hue="dist", kind="kde", multiple="stack")
