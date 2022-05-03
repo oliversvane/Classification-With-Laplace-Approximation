@@ -112,3 +112,22 @@ def dist_plot(var):
     df = pd.DataFrame(list(zip(dist_data_x1, dist_data_x2,cls)),
                 columns =['x', 'y','dist'])
     sns.displot(df, x="x", hue="dist", kind="kde", multiple="stack")
+
+
+
+def project_plot(col,fake_labels):
+    #tester=["Hat","Shoe","Dress","Hat","Shoe","Dress","Hat","Shoe","Dress","jacket"]
+    fig, ax = plt.subplots()
+    reducer = umap.UMAP()
+    embedding=reducer.fit_transform(col)
+    plt.scatter(
+        embedding[:, 0],
+        embedding[:, 1],
+        #c=[sns.color_palette()[x] for x in pd.Series(fake_labels).map({1:0, 2:1, 3:2,4:3, 5:4, 6:5,7:6, 8:7, 9:8,10:9})])
+        c=fake_labels,cmap=plt.cm.get_cmap('gist_rainbow', 9))
+    plt.gca().set_aspect('equal', 'datalim')
+    cbar=plt.colorbar(boundaries=np.arange(11)-0.5).set_ticks(np.arange(10))
+    #cbar.set_ticklabels([tester]) VIRKER IKKE  
+    #cbar = plt.colorbar(boundaries=np.arange(11)-0.5).set_ticks(np.arange(10)), orientation='vertical')
+    plt.title('Fashion Mnist', fontsize=24)
+    plt.show()
