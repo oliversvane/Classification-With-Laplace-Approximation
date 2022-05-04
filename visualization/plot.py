@@ -1,6 +1,7 @@
 import matplotlib.patches as mpatches
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
 def calc_bins(preds):
   # Assign each prediction to a bin
@@ -105,7 +106,6 @@ def Ellipse_plot(cor,var,cls):
 
     plt.show()
 
-import pandas as pd
 def dist_plot(var):
     dist_data_x1 = [x[0] for x in var]
     dist_data_x2 = [x[1] for x in var]
